@@ -11,4 +11,12 @@ public class TaskManager {
     public TaskManager() {
         this.tasks = new ArrayList<>();
     }
+
+    public createTask(String title) {
+
+    }
+
+    public createTask(String title, int priority) {
+        
+    }
 }
