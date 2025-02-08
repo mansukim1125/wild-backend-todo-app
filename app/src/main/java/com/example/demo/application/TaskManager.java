@@ -3,18 +3,15 @@ package com.example.demo.application;
 import com.example.demo.domain.Task;
 import com.example.demo.domain.TaskStatus;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.stream.IntStream;
 
 public class TaskManager {
 
     private final List<Task> tasks;
 
     public TaskManager() {
-        this.tasks = new ArrayList<>();
+        this.tasks = new LinkedList<>();
     }
 
     public Task createTask(String title) {
@@ -46,7 +43,20 @@ public class TaskManager {
         return task;
     }
 
-    public Task changeTaskOrder(List<String> order) {
+    public Task changeTaskPriority(String id, int priority) {
+        int targetIndex = IntStream.range(0, this.tasks.size())
+            .filter(i -> this.tasks.get(i).getId().equals(id))
+            .findFirst()
+            .orElse(-1);
 
+        if (targetIndex == -1) {
+            // TODO: throw exception..
+            return null;
+        }
+
+        Task task = this.tasks.remove(targetIndex);
+        this.tasks.add(priority, task);
+
+        return task;
     }
 }
