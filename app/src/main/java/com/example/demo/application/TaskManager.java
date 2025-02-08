@@ -30,9 +30,9 @@ public class TaskManager {
 
     }
 
-    public void changeTaskStatus(String id, TaskStatus status) {
+    public Task changeTaskStatus(String id, TaskStatus status) {
 
     }
 
-
+    
 }
