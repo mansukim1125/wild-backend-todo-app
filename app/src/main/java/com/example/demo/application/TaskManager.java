@@ -41,7 +41,9 @@ public class TaskManager {
     }
 
     public Task changeTaskStatus(String id, TaskStatus status) {
-
+        Task task = this.getTaskById(id);
+        task.setStatus(status);
+        return task;
     }
 
     public Task changeTaskOrder(List<String> order) {
