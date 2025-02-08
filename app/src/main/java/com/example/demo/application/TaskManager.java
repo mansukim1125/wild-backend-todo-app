@@ -34,7 +34,9 @@ public class TaskManager {
     }
 
     public List<Task> getTasksByStatus(TaskStatus status) {
-
+        return this.tasks.stream()
+            .filter(task -> task.getStatus().equals(status))
+            .toList();
     }
 
     public Task changeTaskStatus(String id, TaskStatus status) {
