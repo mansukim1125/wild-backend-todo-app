@@ -8,8 +8,7 @@
 Request Body
 ```json
 {
-  "title": "string",
-  "priority": number // 여러 Tasks 간 우선순위
+  "title": "string"
 }
 ```
 
@@ -19,7 +18,7 @@ Response 201 Created
   "id": "string",
   "title": "string",
   "priority": number,
-  "completed": false,
+  "status": "INCOMPLETE",
   "createdAt": "2024-02-09T12:00:00Z"   // ISO 8601
 }
 ```
@@ -37,7 +36,7 @@ Response 200 OK
       "id": "string",
       "title": "string",
       "priority": number,
-      "completed": boolean,
+      "status": "INCOMPLETE" | "COMPLETED",
       "createdAt": "2024-02-09T12:00:00Z"
     }
   ]
@@ -50,7 +49,7 @@ Response 200 OK
 Request Body
 ```json
 {
-  "completed": boolean
+  "status": "INCOMPLETE" | "COMPLETED"
 }
 ```
 
@@ -60,7 +59,7 @@ Response 200 OK
   "id": "string",
   "title": "string",
   "priority": number,
-  "completed": boolean,
+  "status": "INCOMPLETE" | "COMPLETED",
   "createdAt": "2024-02-09T12:00:00Z"
 }
 ```
@@ -71,7 +70,7 @@ Response 200 OK
 Request Body
 ```json
 {
-  "priority": number    // 1: High, 2: Medium, 3: Low
+  "priority": number
 }
 ```
 
@@ -81,7 +80,7 @@ Response 200 OK
   "id": "string",
   "title": "string",
   "priority": number,
-  "completed": boolean,
+  "status": "INCOMPLETE" | "COMPLETED",
   "createdAt": "2024-02-09T12:00:00Z"
 }
 ```
