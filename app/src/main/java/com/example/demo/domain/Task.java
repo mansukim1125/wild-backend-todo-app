@@ -30,4 +30,8 @@ public class Task {
     public Date getCreatedAt() {
         return createdAt;
     }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
 }
