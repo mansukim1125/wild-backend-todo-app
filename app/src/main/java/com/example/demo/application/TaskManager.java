@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public class TaskManager {
 
@@ -27,7 +28,9 @@ public class TaskManager {
     }
 
     public Task getTaskById(String id) {
-
+        return this.tasks.stream().filter(task -> {
+           return task.getId().equals(id);
+        }).findFirst().orElse(null);
     }
 
     public List<Task> getTasksByStatus(TaskStatus status) {
