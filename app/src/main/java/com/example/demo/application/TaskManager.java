@@ -29,4 +29,10 @@ public class TaskManager {
     public List<Task> getTasksByStatus(TaskStatus status) {
 
     }
+
+    public void changeTaskStatus(TaskStatus status) {
+
+    }
+
+    
 }
