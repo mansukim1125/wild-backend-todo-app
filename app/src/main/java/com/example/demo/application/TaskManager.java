@@ -4,7 +4,9 @@ import com.example.demo.domain.Task;
 import com.example.demo.domain.TaskStatus;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class TaskManager {
 
@@ -15,7 +17,13 @@ public class TaskManager {
     }
 
     public Task createTask(String title) {
+        String uuid = String.valueOf(UUID.randomUUID());
+        Date createdAt = new Date();
 
+        Task newTask = new Task(uuid, title, TaskStatus.INCOMPLETE, createdAt);
+        tasks.add(newTask);
+
+        return newTask;
     }
 
     public Task createTask(String title, int priority) {
@@ -35,6 +43,6 @@ public class TaskManager {
     }
 
     public Task changeTaskOrder(List<String> order) {
-        
+
     }
 }
