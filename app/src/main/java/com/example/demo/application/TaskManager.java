@@ -34,5 +34,7 @@ public class TaskManager {
 
     }
 
-    
+    public Task changeTaskOrder(List<String> order) {
+        
+    }
 }
