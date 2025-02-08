@@ -28,9 +28,10 @@ public class TaskManager {
     }
 
     public Task getTaskById(String id) {
-        return this.tasks.stream().filter(task -> {
-           return task.getId().equals(id);
-        }).findFirst().orElse(null);
+        return this.tasks.stream()
+            .filter(task -> task.getId().equals(id))
+            .findFirst()
+            .orElse(null);
     }
 
     public List<Task> getTasksByStatus(TaskStatus status) {
