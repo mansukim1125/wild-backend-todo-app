@@ -1,12 +1,14 @@
 package com.example.demo.application;
 
 import com.example.demo.domain.Task;
+import com.example.demo.domain.TaskStatus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaskManager {
 
-    private final ArrayList<Task> tasks;
+    private final List<Task> tasks;
 
     public TaskManager() {
         this.tasks = new ArrayList<>();
@@ -17,6 +19,14 @@ public class TaskManager {
     }
 
     public Task createTask(String title, int priority) {
+
+    }
+
+    public Task getTaskById(String id) {
+
+    }
+
+    public List<Task> getTasksByStatus(TaskStatus status) {
 
     }
 }
